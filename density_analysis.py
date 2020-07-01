@@ -177,16 +177,7 @@ def density(pllx, ra, dec, pmra, pmdec, ih=None, Ndense=20, NST=1,   Cmat=None, 
 
 	if type(vrad)!=type(None):
 		isub = vr_inds[isub]
-
-	if plot:
-		if not type(hostname)==type(None):
-			hostn = hostname
-		else:
-			hostn = ''
-		prob_clump, Cmet, Pnull, model =  analyse_densedist(dense,dense_host, plot=False, sid=sid, hostn=hostn, show=False)
-		plotf.plot_dhist(dense,Cmet, model, prob_clump=prob_clump, prob_null=Pnull, dense_host=dense_host, hostn = hostn, sid=sid, show=show)
-		plotf.plot_spatial(pllx, ra, dec, pmra, pmdec, isub, dense, dense_host, ih, show=show, sid=sid, hostn=hostn)
-
+		
 	return dense_host, norm_dense, dense, isub, Cmat
 	
 	
